@@ -1,0 +1,171 @@
+<?php
+include('function.php');
+header_txt("応募フォーム - ","応募フォーム");
+
+
+$_POST = array_map('htmlspecialchars', $_POST); 
+$_POST = array_map('stripslashes', $_POST);
+if($_GET['m'] === "confirm"){
+confirm();
+}elseif($_GET['m'] === "send"){
+send_me();
+}
+entry();
+
+function entry($error='',$name='',$email='',$title1='',$circle1='',$message1='',$title2='',$circle2='',$message2='',$title3='',$circle3='',$message3='',$url='') {
+
+print '<h1 style="width:700px; background-color:#3CF; text-align:center; font-size:20px; margin-bottom:10px; color:#FFF;">３選応募フォーム</h1>';
+	print "\n<div class=\"contact_cont\" style=\"text-align:left; margin:auto;\">\n";
+
+	if($error){
+		print "\t<p style=\"text-align:center; border:solid 1px red; width:520px; margin:auto; padding:5px 10px; color:red;\">$error</p>";
+	}
+
+	print <<<EOM
+	<br />
+	オススメ3選応募フォームです。<a href="http://blog.doujin-ongaku.org/?p=7">企画詳細はこちら</a>
+
+	<form action="form.php?m=confirm" method="post">
+	<font color="red">☆</font>は必須項目です。
+	<table class="contact_table" border="1" cellspacing="0">
+		<tr><th>名前</th><td><input type="text" size="14" name="name" value="$name"></td></tr>
+		<tr><th>メール</th><td class="left"><input type="text" size="28" name="email" value="$email">（連絡用であり、公開はしません）</td></tr>
+		<tr><th>URL</th><td class="left"><input type="text" size="30" name="url" value="$url"><br />サイトURLやtwitter等公開して良いURLがある方は入力してください</td></tr>
+		<tr><th>タイトル</th><td class="left"><input type="text" size="15" name="title1" value="$title1"></td></tr>
+		<tr><th>サークル名</th><td class="left"><input type="text" size="15" name="circle1" value="$circle1"></td></tr>
+		<tr><th>紹介等</th><td class="left">
+		<textarea cols="48" rows="5" name="message1">$message1</textarea></td></tr>
+		<tr><th>タイトル</th><td class="left"><input type="text" size="15" name="title2" value="$title2"></td></tr>
+		<tr><th>サークル名</th><td class="left"><input type="text" size="15" name="circle2" value="$circle2"></td></tr>
+		<tr><th>紹介等</th><td class="left">
+		<textarea cols="48" rows="5" name="message2">$message2</textarea></td></tr>
+		<tr><th>タイトル</th><td class="left"><input type="text" size="15" name="title3" value="$title3"></td></tr>
+		<tr><th>サークル名</th><td class="left"><input type="text" size="15" name="circle3" value="$circle3"></td></tr>
+		<tr><th>紹介等</th><td class="left">
+		<textarea cols="48" rows="5" name="message3">$message3</textarea></td></tr>
+		<tr><td colspan="2" class="contact_submit"><input type="submit" value="　確認　"></td></tr>
+	</table>
+	</form>
+</div>
+
+EOM;
+footer();
+exit;
+}
+
+
+function confirm() {
+	$error="";
+	$flag = FALSE;
+
+    foreach ($_POST AS $key => $value) {
+        $$key = $value;
+    }
+
+
+	if ($name === ""){ $error .= "名前が入力されていません<br .>";}
+	if ($email === ""){ $error .= "メールアドレスが入力されていません<br />";}else{
+	if (preg_match('/^[a-zA-Z0-9_\.\-]+?@[A-Za-z0-9_\.\-]+$/',$email) == FALSE){ $error .= "Ｅメールの入力形式が間違っています<br />";}
+	}
+	if ($title1 === ""){ $error .= "タイトル1が入力されていません<br />";}
+	if ($circle1 === ""){ $error .= "サークル1が入力されていません<br />";}
+	if ($message1 === ""){ $error .= "内容1が入力されていません<br />";}
+	if ($title2 === ""){ $error .= "タイトル2が入力されていません<br />";}
+	if ($circle2 === ""){ $error .= "サークル2が入力されていません<br />";}
+	if ($message2 === ""){ $error .= "内容2が入力されていません<br />";}
+	if ($title3 === ""){ $error .= "タイトル3が入力されていません<br />";}
+	if ($circle3 === ""){ $error .= "サークル3が入力されていません<br />";}
+	if ($message3 === ""){ $error .= "内容3が入力されていません<br />";}
+	if($error){
+		entry($error,$name,$email,$title1,$circle1,$message1,$title2,$circle2,$message2,$title3,$circle3,$message3,$url);
+	}
+
+
+	print '<h1 style="width:700px; background-color:#3CF; text-align:center; font-size:20px; margin-bottom:10px; color:#FFF;">投稿内容確認</h1>';
+	print "\n<div class=\"contact_cont\" style=\"text-align:center;\">\n";
+	$mes_br = nl2br("$message");
+
+?>
+<table cellspacing="0" class="contact_table" border="1" style="margin:auto;">
+	<tr><th colspan="2" class="contact_title">送信内容</th></tr>
+	<tr><th>お名前</th><td style="text-align:left;"><?php echo $name; ?></td></tr>
+	<tr><th>メール</th><td style="text-align:left;"><?php echo $email; ?></td></tr>
+	<tr><th>URL</th><td style="text-align:left;"><?php echo $url; ?></td></tr>
+	<tr><th>タイトル１</th><td style="text-align:left;"><?php echo $title1; ?></td></tr>
+	<tr><th>サークル</th><td style="text-align:left;"><?php echo $circle1; ?></td></tr>
+	<tr><th>コメント</th><td style="text-align:left;"><?php echo nl2br($message1); ?></td></tr>
+	<tr><th>タイトル２</th><td style="text-align:left;"><?php echo $title2; ?></td></tr>
+	<tr><th>サークル</th><td style="text-align:left;"><?php echo $circle2; ?></td></tr>
+	<tr><th>コメント</th><td style="text-align:left;"><?php echo nl2br($message2); ?></td></tr>
+	<tr><th>タイトル３</th><td style="text-align:left;"><?php echo $title3; ?></td></tr>
+	<tr><th>サークル</th><td style="text-align:left;"><?php echo $circle3; ?></td></tr>
+	<tr><th>コメント</th><td style="text-align:left;"><?php echo nl2br($message3); ?></td></tr>
+<form action="form.php?m=send" method="post">
+	<tr><td colspan="2" class="contact_submit">
+<input type="submit" value="送信"></td></tr>
+<?php
+	print <<<EOM
+<input type="hidden" name="name" value="{$name}"><input type="hidden" name="email" value="{$email}"><input type="hidden" name="title1" value="$title1"><input type="hidden" name="circle1" value="$circle1"><input type="hidden" name="message1" value="{$message1}"><input type="hidden" name="title2" value="$title2"><input type="hidden" name="circle2" value="$circle2"><input type="hidden" name="message2" value="{$message2}"><input type="hidden" name="title3" value="$title3"><input type="hidden" name="circle3" value="$circle3"><input type="hidden" name="message3" value="{$message3}"><input type="hidden" name="url" value="{$url}">
+</form>
+</table>
+</div>
+EOM;
+
+footer();
+exit;
+}
+
+
+
+function send_me(){
+
+
+$inse .= "$addr<>$time_sec\n";
+
+$message = wordwrap($message, 70);
+
+	$date   = gmdate("Y/m/d H:i:s (D)",time()+9*60*60);
+	$agent  = @$_SERVER["HTTP_USER_AGENT"];
+	$r_host = @$_SERVER["REMOTE_HOST"];
+	$h_host = @$_SERVER["HTTP_HOST"];
+
+	$str  = "----------------------------------------------------\n";
+	$str .= "送信者名：{$_POST['name']}\n";
+	$str .= "メールアドレス：{$_POST['email']}\n";
+	$str .= "送信時間：$date\n";
+	$str .= "送信者のIPアドレス：$addr\n";
+	$str .= "送信者のホスト名：$r_host\n";
+	$str .= "送信者のブラウザ：$agent\n";
+	$str .= "----------------------------------------------------\n\n";
+    foreach ($_POST AS $value) {
+        $str .= $value . "\n";
+    }
+$message = $str . $message;
+mb_language('ja');
+mb_internal_encoding("UTF-8");
+$headers = "From: " . mb_encode_mimeheader($_POST['name']) . "<{$_POST['email']}>" . "\r\n" .
+   "Reply-To: " . mb_encode_mimeheader($_POST['name']) . "<{$_POST['email']}>" . "\r\n" .
+   'X-Mailer: PHP/' . phpversion();
+$parameter = "-finfo@{$_SERVER['SERVER_NAME']}";
+$flag = mb_send_mail('webmaster@dojin-music.info', '同人音楽同好会-3選応募', mb_convert_encoding($message, "iso-2022-jp", "UTF-8"), $headers, $parameter);
+
+	if($flag){ 
+
+	print "<h1 class=\"list_title\">送信完了</h1>";
+	print "\n<div class=\"contact_cont\" style=\"text-align:center;\">\n";
+
+	print <<<EOM
+	<h2>ご応募ありがとうございました</h2>
+	<br />
+	今後も同人音楽同好会をよろしくお願いします。<br />
+	<br />
+	<a href="/">トップページへ戻る</A>
+
+</div>
+EOM;
+
+
+	}else{echo '送信失敗';}
+footer();
+exit;
+}

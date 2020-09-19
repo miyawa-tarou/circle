@@ -1,0 +1,2 @@
+date,mail,age,sex,music1,music1_c,music2,music2_c,music3,music3_c,cd1,cd1_c,trigger,trigger_c,exp,quest,message,---,how_many_cd,image,image_c,---,---,ip
+2010-09-13 01:33:09,test@jp,13-15,male,test,,,,,,test,,anime,,1,,,,LE20,kawai,,,,116.64.158.250

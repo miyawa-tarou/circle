@@ -1,0 +1,192 @@
+body {
+  background-color: #f8f8ee;
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  @media screen and (max-width: 1089px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1090px) {
+    width: 1090px;
+  }
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fff;
+
+  header {
+    width: 100%;
+    #header_rogo {
+      h1 {
+        margin: 0;
+      }
+    }
+
+    .header_imgs {
+      clear: both;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  article#article_index {
+    text-align:center;
+
+    #article_index_information {
+      text-align:left;
+      margin: 20px auto;
+      padding: 10px;
+      width: 90%;
+      border: 1px #000 solid;
+    }
+
+    #article_index_hyoshiList {
+      margin: 0 auto;
+      padding: 0;
+
+      li {
+        margin: 2%;
+        display: inline;
+        img {
+          width: 28%;
+        }
+      }
+
+    }
+
+  }
+  article#article_book {
+    padding: 10px 20px;
+    h1 {
+      font-size: 22px;
+      @media screen and (max-width: 1089px) {
+        text-align: center;
+      }
+    }
+    h2 {
+      font-size: 16px;
+      @media screen and (max-width: 700px) {
+        text-align: center;
+      }
+    }
+    .article_book_detail {
+      margin:auto;
+      text-align:center;
+      .article_book_detail_illustrator {
+        font-size:12px;
+      }
+      .article_book_detail_hyoshi {
+        max-width: 500px;
+        width: 80%;
+      }
+      .article_book_detail_hyoshi_s {
+        max-width: 300px;
+        width: 80%;
+      }
+      #article_book_detail_table {
+        width: 95%;
+        margin: auto;
+        th {
+          background-color: #CCC;
+        }
+        td {
+          text-align: left;
+          dl.article_book_detail_table_content {
+            dt {
+              text-decoration: underline;
+              @media screen and (max-width: 1089px) {
+                font-size: 14px;
+              }
+              @media screen and (min-width: 1090px) {
+                font-size: 16px;
+              }
+            }
+            dd {
+              @media screen and (max-width: 1089px) {
+                font-size: 13px;
+              }
+              @media screen and (min-width: 1090px) {
+                font-size: 14px;
+              }
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+    }
+    #book2019_spring {
+      .article_header {
+
+      }
+      th {
+        min-width: 80px;
+      }
+      .charity {
+        font-size: 13px;
+      }
+    }
+
+    .article_book_link {
+      h3 {
+        margin: 20px 0 5px 20px;
+      }
+      ul#article_book_link_audition {
+        width: 90%;
+        margin: auto;
+        li {
+          display: inline-block;
+          width: 200px;
+          height: 40px;
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+  article#article_recruit {
+    padding: 20px;
+    h2 {
+      font-size: 16px;
+      @media screen and (max-width: 700px) {
+        text-align: center;
+      }
+    }
+    h3 {
+      font-size: 15px;
+    }
+    p {
+      padding-left: 15px;
+      @media screen and (max-width: 700px) {
+        font-size: 14px;
+
+      }
+      em {
+        text-decoration: underline;
+      }
+    }
+
+    .button {
+      margin: 10px auto;
+      text-align:center;
+      width: 80%;
+      font-size: 20px;
+      line-height: 50px;
+      background-color: #ffa439;
+      border-radius: 5px;
+      font-weight: bold;
+
+
+    }
+    .button:hover {
+      background-color: #ff831c;
+    }
+  }
+  #footer_recruit {
+    text-align:center;
+  }
+}
+
