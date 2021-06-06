@@ -3,6 +3,22 @@ include('function.php');
 header_txt("Product - ","製作物,同人誌");
 ?>
 		<div id="mainContent">
+            <h2>同人音楽.book -2019 Spring-</h2>
+
+            <table style="margin-left:150px; width:500px; border:hidden;">
+                <tr><td style="width:200px;">
+                        <a href="/2019spring/"><img src="/image/nowprint.gif" alt="同人音楽.book -2019 Spring-" /></a>
+                    </td><td style="vertical-align:top; padding:30px; border:hidden;">
+
+                        <ul style="margin-bottom:20px;">
+                            <li>初頒布：M3-2019春（2019/04/28）</li>
+                            <li>ページ数：22ページ</li>
+                            <li>とても久しぶりの新刊。簡単に「おすすめ10選」×11名をあつめたものになります。</li>
+                        </ul>
+                        →<a href="/2019spring/">詳細情報</a>
+                    </td></tr>
+            </table>
+
 			<h2>同人音楽.book -2012 Autumn-</h2>
 
 			<table style="margin-left:150px; width:500px; border:hidden;">
