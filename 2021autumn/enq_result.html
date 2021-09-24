@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>同人音楽.book -2021 Autumn-リスナーアンケート | 同人音楽同好会</title>
+    <link rel="stylesheet" type="text/css" href="https://circle.dojin-music.info/css/base.css"/>
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@DojinOngakuClub" />
+    <meta property="og:url" content="https://circle.dojin-music.info/2021autumn/enq_result.html" />
+    <meta property="og:title" content="同人音楽.book -2021 Autumn-リスナーアンケート | 同人音楽同好会" />
+    <meta property="og:description" content="同人音楽同好会の同人音楽.book -2021 Autumn-でのリスナーアンケート" />
+    <meta property="og:image" content="https://circle.dojin-music.info/img/yoko/2021autumn.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kosugi Maru', sans-serif;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            background-color: #f8c997;
+            width:90%;
+            text-align: center;
+            margin: 40px auto 20px;
+            padding: 0 5px;
+        }
+        h3 {
+            font-size: 14px;
+        }
+        dt {
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+        dd {
+
+        }
+        #article_chart1, #article_chart2 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .chart_box {
+            margin-bottom: 40px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <div id="header_rogo">
+            <h1><a href="/"><img src="../image/rogo.png" alt="同人音楽同好会" width="333" height="92" /></a></h1>
+        </div>
+        <div class="header_imgs">
+            <a href="./"><img src="..//img/yoko/2021autumn.webp" alt="同人音楽.book -2021 Spring-" /></a>
+        </div>
+    </header>
+
+
+    <h2>概要</h2>
+    <article id="article" style="width:80%; margin:auto;">
+        2021年7～8月頃に行った同人音楽リスナーへのアンケートです。ご協力ありがとうございました。<br />
+        回答者数が40名なので、偏っている情報もあるとは思いますが、明らかに傾向が見て取れるものもあると思います。<br />
+        <a href="/2021autumn/">同人音楽.book-2021 Autumn-</a>ではこれらのデータと、他の情報組合わせたものなどで、「データから見るコロナ禍での同人音楽の変化」的な内容を掲載いたします。<br />
+        タイミング悪くAPOLLO直前にアンケート終了みたいなスケジュールで実施してしまいましたm(_ _)m
+    </article>
+
+    <h2>コロナ禍での購入や即売会参加</h2>
+    <article id="article_chart1" style="width:80%; margin:auto;">
+
+        <div class="chart_box">
+            <canvas id="myChart1" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart1').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['増えた', '変わらない', '減った', '全く行かなくなった', 'もともと行っていない'],
+                        datasets: [{
+                            data: [1, 11, 11, 12, 5],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: 'コロナウイルスが流行してからの（ここ3回の）M3リアルイベントへの参加頻度'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+        <div class="chart_box">
+            <canvas id="myChart2" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart2').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['倍増以上', '多少増えた', '変化なし', '多少減った', '半減以下'],
+                        datasets: [{
+                            data: [1, 2, 6, 9, 5],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: 'コロナ前と比べてリアルイベントで購入する量'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+        <div class="chart_box">
+            <canvas id="myChart3" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart3').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['増えた', '変わらない', '減った', '通販で買わない'],
+                        datasets: [{
+                            data: [15, 11, 4, 10],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: 'コロナ前と比べてCD等「通販」で購入する量'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+
+        <div class="chart_box">
+            <canvas id="myChart4" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart4').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['増えた', '変わらない', '減った', 'ダウンロードで買わない'],
+                        datasets: [{
+                            data: [14, 15, 1, 10],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: 'コロナ前と比べてCD等「ダウンロード販売」で購入する量'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+
+
+        <div class="chart_box">
+            <canvas id="myChart5" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart5').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['最初から最後まで', '5時間以内', '3時間以内', '2時間以内', '1時間以内'],
+                        datasets: [{
+                            data: [9, 4, 8, 7, 0],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)'
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: 'コロナ前のM3滞在時間'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+
+        <div class="chart_box">
+            <canvas id="myChart6" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart6').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['3時間以上', '3時間以内', '2時間以内', '1時間以内'],
+                        datasets: [{
+                            data: [2, 1, 10, 2],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)'
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: 'コロナになってからののM3滞在時間'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+        <div class="chart_box">
+            <canvas id="myChartBar1" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChartBar1').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['A時間帯（10:30～12:30）', 'B時間帯（12:30～14:30）', 'C時間帯（14:30～15:30）', 'サークル参加', '不参加'],
+                        datasets: [{
+                            data: [10, 2, 2, 5, 22],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)'
+                            ],
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: '2020秋M3参加時間帯'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+
+        <div class="chart_box">
+            <canvas id="myChartBar2" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChartBar2').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['A時間帯（10:30～12:30）', 'B時間帯（12:30～14:30）', 'サークル参加', '不参加'],
+                        datasets: [{
+                            data: [8, 1, 5, 26],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)'],
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: '2021春M3参加時間帯'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+
+        <div class="chart_box">
+            <canvas id="myChartBar3" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChartBar3').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['M3 オンライン会場', 'APOLLO', 'Music Utopia', 'バーチャル同人音楽即売会 「MusicVket」', '秋葉原同人音楽祭 online'],
+                        datasets: [{
+                            data: [38, 37, 22, 21, 19],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)'
+                                ]
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: '知っているオンライン即売会'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+
+        <div class="chart_box">
+            <canvas id="myChartBar4" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChartBar4').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['M3-2020秋 オンライン会場', 'M3-2021春 オンライン会場', 'Music Utopia', 'Music Utopia vol.02', 'Music Utopia vol.03', 'Music Utopia vol.04', 'MusicVket1', 'MusicVket2', '秋葉原同人音楽祭 online'],
+                        datasets: [{
+                            data: [19 ,21, 5, 7, 8, 9, 3, 5, 7],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'オンライン即売会の参加'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+    </article>
+
+    <h2>回答者</h2>
+    <article id="article_chart2" style="width:80%; margin:auto;">
+
+        <div class="chart_box">
+            <canvas id="myChart11" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart11').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['15～19年', '10～14年', '6～9年', '4～5年', '2～3年', '1年'],
+                        datasets: [{
+                            data: [7, 17, 9, 3, 3, 1],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: '同人音楽歴'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+        <div class="chart_box">
+            <canvas id="myChart12" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart12').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['24歳以下', '25～29歳', '30～34歳', '35～39歳', '40歳以上'],
+                        datasets: [{
+                            data: [4, 10, 14, 8, 4],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: '年齢層'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+        <div class="chart_box">
+            <canvas id="myChart13" width="400" height="400"></canvas>
+
+            <script>
+                var ctx = document.getElementById('myChart13').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['女性', '男性', '無回答'],
+                        datasets: [{
+                            data: [11, 28, 1],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: '性別'
+                            }
+                        }
+                    }
+                });
+                myChart.canvas.parentNode.style.height = '400px';
+                myChart.canvas.parentNode.style.width = '400px';
+            </script>
+        </div>
+
+
+
+
+    </article>
+</div>
+</body>
+</html>
