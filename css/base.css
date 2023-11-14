@@ -1,0 +1,231 @@
+body {
+  background-color: #f8f8ee;
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 1089px) {
+  #wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1090px) {
+  #wrapper {
+    width: 1090px;
+  }
+}
+
+#wrapper header {
+  width: 100%;
+}
+
+#wrapper header #header_rogo h1 {
+  margin: 0;
+}
+
+#wrapper header .header_imgs {
+  clear: both;
+}
+
+#wrapper header .header_imgs img {
+  width: 100%;
+}
+
+#wrapper article#article_index {
+  text-align: center;
+}
+
+#wrapper article#article_index #article_index_information {
+  text-align: left;
+  margin: 20px auto;
+  padding: 10px;
+  width: 90%;
+  border: 1px #000 solid;
+}
+
+#wrapper article#article_index #article_index_hyoshiList {
+  margin: 0 auto;
+  padding: 0;
+}
+
+#wrapper article#article_index #article_index_hyoshiList li {
+  margin: 2%;
+  display: inline;
+}
+
+#wrapper article#article_index #article_index_hyoshiList li img {
+  width: 28%;
+}
+
+#wrapper article#article_book {
+  padding: 10px 20px;
+}
+
+#wrapper article#article_book h1 {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 1089px) {
+  #wrapper article#article_book h1 {
+    text-align: center;
+  }
+}
+
+#wrapper article#article_book h2 {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 700px) {
+  #wrapper article#article_book h2 {
+    text-align: center;
+  }
+}
+
+#wrapper article#article_book .article_book_detail {
+  margin: auto;
+  text-align: center;
+}
+
+#wrapper article#article_book .article_book_detail .article_book_detail_illustrator {
+  font-size: 12px;
+}
+
+#wrapper article#article_book .article_book_detail .article_book_detail_hyoshi {
+  max-width: 500px;
+  width: 80%;
+}
+
+#wrapper article#article_book .article_book_detail .article_book_detail_hyoshi_s {
+  max-width: 300px;
+  width: 80%;
+}
+
+#wrapper article#article_book .article_book_detail #article_book_detail_table {
+  width: 95%;
+  margin: auto;
+}
+
+#wrapper article#article_book .article_book_detail #article_book_detail_table th {
+  background-color: #CCC;
+}
+
+#wrapper article#article_book .article_book_detail #article_book_detail_table td {
+  text-align: left;
+}
+
+#wrapper article#article_book .article_book_detail #article_book_detail_table td dl.article_book_detail_table_content dt {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1089px) {
+  #wrapper article#article_book .article_book_detail #article_book_detail_table td dl.article_book_detail_table_content dt {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1090px) {
+  #wrapper article#article_book .article_book_detail #article_book_detail_table td dl.article_book_detail_table_content dt {
+    font-size: 16px;
+  }
+}
+
+#wrapper article#article_book .article_book_detail #article_book_detail_table td dl.article_book_detail_table_content dd {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1089px) {
+  #wrapper article#article_book .article_book_detail #article_book_detail_table td dl.article_book_detail_table_content dd {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1090px) {
+  #wrapper article#article_book .article_book_detail #article_book_detail_table td dl.article_book_detail_table_content dd {
+    font-size: 14px;
+  }
+}
+
+#wrapper article#article_book #book2019_spring th {
+  min-width: 80px;
+}
+
+#wrapper article#article_book #book2019_spring .charity {
+  font-size: 13px;
+}
+
+#wrapper article#article_book .article_book_link h3 {
+  margin: 20px 0 5px 20px;
+}
+
+#wrapper article#article_book .article_book_link ul#article_book_link_audition {
+  width: 90%;
+  margin: auto;
+}
+
+#wrapper article#article_book .article_book_link ul#article_book_link_audition li {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+}
+
+#wrapper article#article_book .article_book_link ul#article_book_link_audition li img {
+  width: 200px;
+}
+
+#wrapper article#article_recruit {
+  padding: 20px;
+}
+
+#wrapper article#article_recruit h2 {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 700px) {
+  #wrapper article#article_recruit h2 {
+    text-align: center;
+  }
+}
+
+#wrapper article#article_recruit h3 {
+  font-size: 15px;
+}
+
+#wrapper article#article_recruit p {
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  #wrapper article#article_recruit p {
+    font-size: 14px;
+  }
+}
+
+#wrapper article#article_recruit p em {
+  text-decoration: underline;
+}
+
+#wrapper article#article_recruit .button {
+  margin: 10px auto;
+  text-align: center;
+  width: 80%;
+  font-size: 20px;
+  line-height: 50px;
+  background-color: #ffa439;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#wrapper article#article_recruit .button:hover {
+  background-color: #ff831c;
+}
+
+#wrapper #footer_recruit {
+  text-align: center;
+}
